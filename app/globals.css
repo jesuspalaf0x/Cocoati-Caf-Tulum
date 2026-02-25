@@ -1,26 +1,106 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #BE9D55;
+  --color-background-light: #F6F0EF;
+  --color-background-dark: #18181b;
+  --color-cream: #F6F0EF;
+  --color-gold: #BE9D55;
+  
+  --font-sans: var(--font-public-sans), sans-serif;
+  --font-serif: var(--font-playfair-display), serif;
+
+  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  --background-image-marble: linear-gradient(rgba(246, 240, 239, 0.95), rgba(246, 240, 239, 0.95)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPsfS1hZublMIZALyVARbqPklknuyVARaQGZrfhTmxSIN2KuxC6qPlPYzBciDptIWcbYhvJMrojKDnnzgAm8TJW-jUInhaQRdI3v4Ru7bTAaEN6TgyzihOKaA9nB1l_TsLkjWQHvSHic7FKg0ZvAse3p5dxu71jt_Nzw5b-84hZPREmiOkjgWKXxvrJv5g6Z-DYS4Dh1wT4F1JcITGCgocYIy_uGWcrbKD_TIEuUD_-CY6UfBnq9Fg3BeLC-yj7NQjW4mwgPQ5RcM');
+  --background-image-marble-dark: linear-gradient(rgba(24, 24, 27, 0.95), rgba(24, 24, 27, 0.95)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPsfS1hZublMIZALyVARbqPklknuyVARaQGZrfhTmxSIN2KuxC6qPlPYzBciDptIWcbYhvJMrojKDnnzgAm8TJW-jUInhaQRdI3v4Ru7bTAaEN6TgyzihOKaA9nB1l_TsLkjWQHvSHic7FKg0ZvAse3p5dxu71jt_Nzw5b-84hZPREmiOkjgWKXxvrJv5g6Z-DYS4Dh1wT4F1JcITGCgocYIy_uGWcrbKD_TIEuUD_-CY6UfBnq9Fg3BeLC-yj7NQjW4mwgPQ5RcM');
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F6F0EF;
+  --foreground: #1F2937;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --background: #18181b;
+  --foreground: #F6F0EF;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .hero-text {
+    font-family: var(--font-playfair-display), serif;
+  }
+
+  .glass {
+      background: rgba(24, 24, 27, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-light {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+
+  .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
   }
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #18181b; /* background-dark */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #BE9D55; /* primary */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a38646; /* darker primary */
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-background-light dark:bg-background-dark text-slate-800 dark:text-cream transition-colors duration-300 font-sans antialiased min-h-screen;
+}
+
+@layer utilities {
+  .marble-bg {
+    background-image: var(--background-image-marble);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .dark .marble-bg {
+    background-image: none;
+    background-color: var(--color-background-dark);
+  }
 }
