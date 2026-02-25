@@ -4,13 +4,18 @@
 
 @theme {
   --color-primary: #BE9D55;
+  --color-primary-dark: #9A7D3A;
+  --color-background-dark: #0B0C10;
+  --color-surface-dark: #15171E;
+  --color-surface-light: #1F222B;
+  --color-border-gold: #BE9D5540;
   --color-background-light: #F6F0EF;
-  --color-background-dark: #18181b;
   --color-cream: #F6F0EF;
   --color-gold: #BE9D55;
   
-  --font-sans: var(--font-public-sans), sans-serif;
+  --font-sans: var(--font-public-sans), 'Inter', sans-serif;
   --font-serif: var(--font-playfair-display), serif;
+  --font-display: 'Inter', sans-serif;
 
   --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
 
@@ -27,6 +32,9 @@
 
   --background-image-marble: linear-gradient(rgba(246, 240, 239, 0.95), rgba(246, 240, 239, 0.95)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPsfS1hZublMIZALyVARbqPklknuyVARaQGZrfhTmxSIN2KuxC6qPlPYzBciDptIWcbYhvJMrojKDnnzgAm8TJW-jUInhaQRdI3v4Ru7bTAaEN6TgyzihOKaA9nB1l_TsLkjWQHvSHic7FKg0ZvAse3p5dxu71jt_Nzw5b-84hZPREmiOkjgWKXxvrJv5g6Z-DYS4Dh1wT4F1JcITGCgocYIy_uGWcrbKD_TIEuUD_-CY6UfBnq9Fg3BeLC-yj7NQjW4mwgPQ5RcM');
   --background-image-marble-dark: linear-gradient(rgba(24, 24, 27, 0.95), rgba(24, 24, 27, 0.95)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPsfS1hZublMIZALyVARbqPklknuyVARaQGZrfhTmxSIN2KuxC6qPlPYzBciDptIWcbYhvJMrojKDnnzgAm8TJW-jUInhaQRdI3v4Ru7bTAaEN6TgyzihOKaA9nB1l_TsLkjWQHvSHic7FKg0ZvAse3p5dxu71jt_Nzw5b-84hZPREmiOkjgWKXxvrJv5g6Z-DYS4Dh1wT4F1JcITGCgocYIy_uGWcrbKD_TIEuUD_-CY6UfBnq9Fg3BeLC-yj7NQjW4mwgPQ5RcM');
+  
+  --background-image-gold-gradient: linear-gradient(135deg, #BE9D55 0%, #9A7D3A 100%);
+  --background-image-gold-gradient-hover: linear-gradient(135deg, #D4B46D 0%, #AC8C44 100%);
 }
 
 :root {
@@ -35,8 +43,8 @@
 }
 
 .dark {
-  --background: #18181b;
-  --foreground: #F6F0EF;
+  --background: #0B0C10;
+  --foreground: #E2E8F0;
 }
 
 @layer utilities {
@@ -73,19 +81,82 @@
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #18181b; /* background-dark */
+    background: var(--color-surface-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #BE9D55; /* primary */
+    background: #333;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #a38646; /* darker primary */
+    background: var(--color-primary);
+}
+
+/* Base custom classes from Admin Template */
+@layer utilities {
+  .glass-panel {
+      background: rgba(21, 23, 30, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+  }
+
+  .gold-border {
+      border: 1px solid rgba(190, 157, 85, 0.2);
+      transition: all 0.3s ease;
+  }
+  
+  .gold-border:focus-within, .gold-border:hover {
+      border-color: rgba(190, 157, 85, 0.5);
+      box-shadow: 0 4px 20px -5px rgba(190, 157, 85, 0.15);
+  }
+
+  .nav-item-active {
+      background: linear-gradient(90deg, rgba(190, 157, 85, 0.1) 0%, transparent 100%);
+      border-left: 3px solid #BE9D55;
+      color: #BE9D55;
+  }
+
+  .custom-input {
+      background-color: #1F222B;
+      border-color: #2D3748;
+      color: white;
+      transition: all 0.2s;
+  }
+  
+  .custom-input:focus {
+      border-color: #BE9D55;
+      box-shadow: 0 0 0 2px rgba(190, 157, 85, 0.2);
+  }
+
+  .table-row-hover:hover {
+      background: linear-gradient(90deg, rgba(190, 157, 85, 0.05) 0%, transparent 100%);
+  }
+
+  .status-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+  }
+  
+  .status-active {
+      background-color: rgba(34, 197, 94, 0.1);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+  }
+  
+  .status-inactive {
+      background-color: rgba(148, 163, 184, 0.1);
+      color: #94a3b8;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+  }
 }
 
 body {
