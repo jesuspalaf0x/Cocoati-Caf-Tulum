@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface ArticleProps {
+    id: string;
     title: string;
     content: string;
     image_url: string;
@@ -11,6 +12,7 @@ interface ArticleProps {
 }
 
 export default function ArticleCard({
+    id,
     title,
     content,
     image_url,
@@ -43,7 +45,7 @@ export default function ArticleCard({
                 </p>
                 <div className="mt-auto">
                     <Link
-                        href="#"
+                        href={`/blog/post?id=${id}`}
                         className="text-sm text-slate-900 dark:text-white hover:text-primary font-bold underline decoration-primary/50 underline-offset-4 transition-colors flex items-center gap-1"
                     >
                         Continuar leyendo{" "}

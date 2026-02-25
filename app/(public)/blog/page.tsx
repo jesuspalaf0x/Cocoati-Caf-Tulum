@@ -150,7 +150,7 @@ export default function BlogPage() {
                                         {featuredPost.content}
                                     </p>
                                     <Link
-                                        href={`/blog/${featuredPost.id}`}
+                                        href={`/blog/post?id=${featuredPost.id}`}
                                         className="inline-flex items-center gap-2 text-primary border-b border-primary pb-1 hover:text-white hover:border-white transition-all group"
                                     >
                                         <span className="text-lg font-bold">
@@ -189,6 +189,7 @@ export default function BlogPage() {
                                 {posts.map((post: any) => (
                                     <ArticleCard
                                         key={post.id}
+                                        id={post.id}
                                         title={post.title}
                                         content={post.content}
                                         image_url={post.image_url}
@@ -211,8 +212,8 @@ export default function BlogPage() {
                                         onClick={() => handlePageChange(currentPage - 1)}
                                         disabled={currentPage === 1}
                                         className={`w-10 h-10 flex items-center justify-center rounded-full border transition-colors ${currentPage === 1
-                                                ? 'border-slate-200 dark:border-white/10 text-slate-400 dark:text-slate-600 bg-transparent opacity-50 cursor-not-allowed'
-                                                : 'border-slate-200 dark:border-white/10 text-slate-600 dark:text-white hover:border-primary hover:text-primary bg-white dark:bg-white/5'
+                                            ? 'border-slate-200 dark:border-white/10 text-slate-400 dark:text-slate-600 bg-transparent opacity-50 cursor-not-allowed'
+                                            : 'border-slate-200 dark:border-white/10 text-slate-600 dark:text-white hover:border-primary hover:text-primary bg-white dark:bg-white/5'
                                             }`}
                                     >
                                         <span className="material-symbols-outlined text-base">arrow_back</span>
@@ -225,8 +226,8 @@ export default function BlogPage() {
                                                 key={pageNumber}
                                                 onClick={() => handlePageChange(pageNumber)}
                                                 className={`w-10 h-10 flex items-center justify-center rounded-full transition-colors font-bold ${currentPage === pageNumber
-                                                        ? 'border border-primary bg-primary text-white'
-                                                        : 'border border-slate-200 dark:border-white/10 text-slate-600 dark:text-white hover:border-primary hover:text-primary bg-white dark:bg-white/5'
+                                                    ? 'border border-primary bg-primary text-white'
+                                                    : 'border border-slate-200 dark:border-white/10 text-slate-600 dark:text-white hover:border-primary hover:text-primary bg-white dark:bg-white/5'
                                                     }`}
                                             >
                                                 {pageNumber}
@@ -238,8 +239,8 @@ export default function BlogPage() {
                                         onClick={() => handlePageChange(currentPage + 1)}
                                         disabled={currentPage === totalPages}
                                         className={`w-10 h-10 flex items-center justify-center rounded-full border transition-colors ${currentPage === totalPages
-                                                ? 'border-slate-200 dark:border-white/10 text-slate-400 dark:text-slate-600 bg-transparent opacity-50 cursor-not-allowed'
-                                                : 'border-slate-200 dark:border-white/10 text-slate-600 dark:text-white hover:border-primary hover:text-primary bg-white dark:bg-white/5'
+                                            ? 'border-slate-200 dark:border-white/10 text-slate-400 dark:text-slate-600 bg-transparent opacity-50 cursor-not-allowed'
+                                            : 'border-slate-200 dark:border-white/10 text-slate-600 dark:text-white hover:border-primary hover:text-primary bg-white dark:bg-white/5'
                                             }`}
                                     >
                                         <span className="material-symbols-outlined text-base">arrow_forward</span>
