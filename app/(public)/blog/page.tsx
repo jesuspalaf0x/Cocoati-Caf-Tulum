@@ -1,38 +1,88 @@
-import { createClient } from "@/utils/supabase/server";
+"use client";
+
+import { useState, useEffect } from "react";
+import { createClient } from "@/utils/supabase/client";
 import ArticleCard from "@/components/ArticleCard";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata = {
-    title: "Crónicas de la Corte | COCOATI",
-    description: "Historias sobre el arte del café y la cultura imperial.",
-};
+export default function BlogPage() {
+    const supabase = createClient();
 
-export default async function BlogPage() {
-    const supabase = await createClient();
-    // Helper for timeout
-    const fetchWithTimeout = async (promise: any, ms = 5000) => {
-        let timeoutId;
-        const timeoutPromise = new Promise((_, reject) => {
-            timeoutId = setTimeout(() => reject(new Error("Request timed out")), ms);
-        });
+    const [posts, setPosts] = useState<any[]>([]);
+    const [featuredPost, setFeaturedPost] = useState<any>(null);
+    const [loading, setLoading] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPosts, setTotalPosts] = useState(0);
+
+    const POSTS_PER_PAGE = 4;
+
+    useEffect(() => {
+        fetchData();
+    }, [currentPage]);
+
+    const fetchData = async () => {
+        setLoading(true);
         try {
-            const res = await Promise.race([promise, timeoutPromise]);
-            clearTimeout(timeoutId);
-            return res;
+            // First time, fetch the featured post
+            let currentFeatured = featuredPost;
+            if (!currentFeatured) {
+                const { data: featuredData } = await supabase
+                    .from("posts")
+                    .select("*")
+                    .eq("title", "El Ritual del Espresso de Medianoche")
+                    .limit(1);
+
+                currentFeatured = featuredData?.[0];
+
+                if (!currentFeatured) {
+                    const { data: latestData } = await supabase
+                        .from("posts")
+                        .select("*")
+                        .order("created_at", { ascending: false })
+                        .limit(1);
+                    currentFeatured = latestData?.[0];
+                }
+
+                setFeaturedPost(currentFeatured);
+            }
+
+            // Now fetch paginated posts, excluding the featured post
+            let query = supabase
+                .from("posts")
+                .select("*", { count: "exact" });
+
+            if (currentFeatured) {
+                query = query.neq("id", currentFeatured.id);
+            }
+
+            const from = (currentPage - 1) * POSTS_PER_PAGE;
+            const to = from + POSTS_PER_PAGE - 1;
+
+            const { data, count, error } = await query
+                .order("created_at", { ascending: false })
+                .range(from, to);
+
+            if (error) throw error;
+
+            setPosts(data || []);
+            setTotalPosts(count || 0);
+
         } catch (error) {
-            clearTimeout(timeoutId);
-            console.error("Supabase fetch error/timeout:", error);
-            return { data: [] }; // Fallback
+            console.error("Error fetching posts:", error);
+        } finally {
+            setLoading(false);
         }
     };
 
-    const postsQuery = supabase.from("posts").select("*");
-    const { data: posts } = await fetchWithTimeout(postsQuery);
+    const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
 
-    const featuredTitle = "El Ritual del Espresso de Medianoche";
-    const featuredPost = posts?.find((p: any) => p.title === featuredTitle) || posts?.[0];
-    const otherPosts = posts?.filter((p: any) => p.id !== featuredPost?.id) || [];
+    const handlePageChange = (newPage: number) => {
+        if (newPage >= 1 && newPage <= totalPages) {
+            setCurrentPage(newPage);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    };
 
     return (
         <div className="bg-background-light dark:bg-background-dark min-h-screen">
@@ -74,13 +124,13 @@ export default async function BlogPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                     {/* Main Column (Articles) */}
                     <div className="lg:col-span-8 space-y-16">
-                        {/* Featured Article */}
-                        {featuredPost && (
+                        {/* Featured Article - only show on page 1 */}
+                        {currentPage === 1 && featuredPost && (
                             <article className="relative group rounded-3xl overflow-hidden shadow-2xl shadow-black/20 dark:shadow-black/50 border border-slate-200 dark:border-white/5 bg-white dark:bg-background-dark/50 transition-all duration-500 hover:border-primary/30">
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10 pointer-events-none transition-opacity duration-500 opacity-80 group-hover:opacity-90"></div>
                                 <div className="relative h-[500px] overflow-hidden">
                                     <Image
-                                        src={featuredPost.image_url}
+                                        src={featuredPost.image_url || "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80"}
                                         alt={featuredPost.title}
                                         fill
                                         className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -100,7 +150,7 @@ export default async function BlogPage() {
                                         {featuredPost.content}
                                     </p>
                                     <Link
-                                        href="#"
+                                        href={`/blog/${featuredPost.id}`}
                                         className="inline-flex items-center gap-2 text-primary border-b border-primary pb-1 hover:text-white hover:border-white transition-all group"
                                     >
                                         <span className="text-lg font-bold">
@@ -130,28 +180,73 @@ export default async function BlogPage() {
                         </div>
 
                         {/* Article Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
-                            {otherPosts.map((post: any) => (
-                                <ArticleCard
-                                    key={post.id}
-                                    title={post.title}
-                                    content={post.content}
-                                    image_url={post.image_url}
-                                    created_at={post.created_at}
-                                />
-                            ))}
-                        </div>
+                        {loading ? (
+                            <div className="flex justify-center items-center py-20">
+                                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+                            </div>
+                        ) : (
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+                                {posts.map((post: any) => (
+                                    <ArticleCard
+                                        key={post.id}
+                                        title={post.title}
+                                        content={post.content}
+                                        image_url={post.image_url}
+                                        created_at={post.created_at}
+                                    />
+                                ))}
+                                {posts.length === 0 && (
+                                    <div className="col-span-full text-center py-10 text-slate-500">
+                                        No hay más crónicas por el momento.
+                                    </div>
+                                )}
+                            </div>
+                        )}
 
-                        {/* Pagination (Visual only for now) */}
-                        <div className="flex justify-center pt-8">
-                            <nav className="flex gap-2">
-                                <button className="w-10 h-10 flex items-center justify-center rounded-full border border-primary bg-primary text-white font-bold">1</button>
-                                <button className="w-10 h-10 flex items-center justify-center rounded-full border border-slate-200 dark:border-white/10 text-slate-600 dark:text-white hover:border-primary hover:text-primary transition-colors bg-white dark:bg-white/5">2</button>
-                                <button className="w-10 h-10 flex items-center justify-center rounded-full border border-slate-200 dark:border-white/10 text-slate-600 dark:text-white hover:border-primary hover:text-primary transition-colors bg-white dark:bg-white/5">
-                                    <span className="material-symbols-outlined text-base">arrow_forward</span>
-                                </button>
-                            </nav>
-                        </div>
+                        {/* Pagination */}
+                        {totalPages > 1 && (
+                            <div className="flex justify-center pt-8">
+                                <nav className="flex gap-2">
+                                    <button
+                                        onClick={() => handlePageChange(currentPage - 1)}
+                                        disabled={currentPage === 1}
+                                        className={`w-10 h-10 flex items-center justify-center rounded-full border transition-colors ${currentPage === 1
+                                                ? 'border-slate-200 dark:border-white/10 text-slate-400 dark:text-slate-600 bg-transparent opacity-50 cursor-not-allowed'
+                                                : 'border-slate-200 dark:border-white/10 text-slate-600 dark:text-white hover:border-primary hover:text-primary bg-white dark:bg-white/5'
+                                            }`}
+                                    >
+                                        <span className="material-symbols-outlined text-base">arrow_back</span>
+                                    </button>
+
+                                    {Array.from({ length: totalPages }).map((_, index) => {
+                                        const pageNumber = index + 1;
+                                        return (
+                                            <button
+                                                key={pageNumber}
+                                                onClick={() => handlePageChange(pageNumber)}
+                                                className={`w-10 h-10 flex items-center justify-center rounded-full transition-colors font-bold ${currentPage === pageNumber
+                                                        ? 'border border-primary bg-primary text-white'
+                                                        : 'border border-slate-200 dark:border-white/10 text-slate-600 dark:text-white hover:border-primary hover:text-primary bg-white dark:bg-white/5'
+                                                    }`}
+                                            >
+                                                {pageNumber}
+                                            </button>
+                                        );
+                                    })}
+
+                                    <button
+                                        onClick={() => handlePageChange(currentPage + 1)}
+                                        disabled={currentPage === totalPages}
+                                        className={`w-10 h-10 flex items-center justify-center rounded-full border transition-colors ${currentPage === totalPages
+                                                ? 'border-slate-200 dark:border-white/10 text-slate-400 dark:text-slate-600 bg-transparent opacity-50 cursor-not-allowed'
+                                                : 'border-slate-200 dark:border-white/10 text-slate-600 dark:text-white hover:border-primary hover:text-primary bg-white dark:bg-white/5'
+                                            }`}
+                                    >
+                                        <span className="material-symbols-outlined text-base">arrow_forward</span>
+                                    </button>
+                                </nav>
+                            </div>
+                        )}
                     </div>
 
                     {/* Sidebar (Right) - Static for now as per HTML */}
