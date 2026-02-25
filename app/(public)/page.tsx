@@ -274,7 +274,7 @@ export default async function Home() {
                 <div className="relative w-full aspect-square max-w-md group">
                   <div className="absolute -inset-4 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all"></div>
                   <Image
-                    src="https://drive.google.com/uc?id=14p7bbuIi5AogYxr8d3qElxRezFI46Rek"
+                    src="https://lh3.googleusercontent.com/d/14p7bbuIi5AogYxr8d3qElxRezFI46Rek"
                     alt="Granos de café"
                     fill
                     className="relative z-10 object-cover rounded-[2.5rem] border-8 border-white dark:border-white/10 shadow-2xl transition-transform duration-500 group-hover:scale-105"
