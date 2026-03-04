@@ -14,7 +14,7 @@ export default function ContactPage() {
             <section className="relative h-[450px] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="https://images.unsplash.com/photo-1501339819358-ee5f8b4912ba?q=80&w=2070&auto=format&fit=crop"
+                        src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2071&auto=format&fit=crop"
                         alt="Interior elegante de una cafetería"
                         fill
                         className="object-cover"
@@ -43,9 +43,9 @@ export default function ContactPage() {
                         </div>
                         <h3 className="text-xl font-bold mb-3 hero-text text-slate-900 dark:text-white">Dirección</h3>
                         <p className="text-slate-600 dark:text-cream/70 text-sm leading-relaxed mb-4">
-                            Av. del Emperador Romano #128,<br />Colonia Roma Norte, CDMX.
+                            Calle Tun-kul entre Av. Satélite<br />y Calle Centauro Norte.
                         </p>
-                        <a href="#" className="mt-auto text-primary font-bold text-xs uppercase tracking-widest hover:text-primary/70 transition-colors border-b border-primary/20 pb-1">
+                        <a href="https://maps.app.goo.gl/qmSaL86h6QikyAsf9" target="_blank" rel="noopener noreferrer" className="mt-auto text-primary font-bold text-xs uppercase tracking-widest hover:text-primary/70 transition-colors border-b border-primary/20 pb-1">
                             Ver en Maps
                         </a>
                     </div>
@@ -56,9 +56,9 @@ export default function ContactPage() {
                         </div>
                         <h3 className="text-xl font-bold mb-3 hero-text text-slate-900 dark:text-white">Teléfono</h3>
                         <p className="text-slate-600 dark:text-cream/70 text-sm leading-relaxed mb-4">
-                            (55) 1234-5678<br />Atención Preferencial
+                            (984) 133 2337<br />Atención Preferencial
                         </p>
-                        <a href="tel:5512345678" className="mt-auto text-primary font-bold text-xs uppercase tracking-widest hover:text-primary/70 transition-colors border-b border-primary/20 pb-1">
+                        <a href="tel:9841332337" className="mt-auto text-primary font-bold text-xs uppercase tracking-widest hover:text-primary/70 transition-colors border-b border-primary/20 pb-1">
                             Llamar Ahora
                         </a>
                     </div>
@@ -69,9 +69,9 @@ export default function ContactPage() {
                         </div>
                         <h3 className="text-xl font-bold mb-3 hero-text text-slate-900 dark:text-white">Email</h3>
                         <p className="text-slate-600 dark:text-cream/70 text-sm leading-relaxed mb-4">
-                            contacto@cocoati.mx<br />Soporte 24/7
+                            contacto@cocoati.com<br />Soporte 24/7
                         </p>
-                        <a href="mailto:contacto@cocoati.mx" className="mt-auto text-primary font-bold text-xs uppercase tracking-widest hover:text-primary/70 transition-colors border-b border-primary/20 pb-1">
+                        <a href="mailto:contacto@cocoati.com" className="mt-auto text-primary font-bold text-xs uppercase tracking-widest hover:text-primary/70 transition-colors border-b border-primary/20 pb-1">
                             Enviar Correo
                         </a>
                     </div>
@@ -82,8 +82,8 @@ export default function ContactPage() {
                         </div>
                         <h3 className="text-xl font-bold mb-3 hero-text text-slate-900 dark:text-white">Horarios</h3>
                         <p className="text-slate-600 dark:text-cream/70 text-sm leading-relaxed mb-4">
-                            L-V: 7:00 AM - 9:00 PM<br />
-                            S-D: 9:00 AM - 8:00 PM
+                            Jueves a Martes de 3:00 PM a 10:30 PM<br />
+                            Miércoles cerrado.
                         </p>
                         <span className="mt-auto text-green-600 dark:text-green-400 font-bold text-xs uppercase tracking-widest flex items-center gap-1">
                             <span className="size-2 bg-green-500 rounded-full animate-pulse"></span>
@@ -163,11 +163,11 @@ export default function ContactPage() {
                 <div className="h-full min-h-[500px] flex flex-col gap-6">
                     <div className="flex-grow rounded-3xl overflow-hidden border-4 border-white dark:border-white/10 shadow-2xl relative min-h-[400px]">
                         <div className="absolute inset-0">
-                            <Image
-                                src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=2066&auto=format&fit=crop"
-                                alt="Mapa estilizado de la Ciudad de México"
-                                fill
-                                className="object-cover"
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="https://drive.google.com/uc?id=1Hik8sW2LDC6aVqAKXoKA3RAmtv6dSDWZ"
+                                alt="Mapa estilizado de la ubicación"
+                                className="absolute inset-0 w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
                         </div>
@@ -192,12 +192,17 @@ export default function ContactPage() {
                         <div>
                             <h4 className="font-bold text-sm text-slate-900 dark:text-white">¿Cómo llegar?</h4>
                             <p className="text-slate-500 dark:text-cream/50 text-xs">
-                                Contamos con Valet Parking gratuito para todos los miembros del Club.
+                                Visítanos en la sucursal del sabor y vive una experiencia inolvidable.
                             </p>
                         </div>
-                        <button className="ml-auto bg-slate-100 dark:bg-white/5 p-3 rounded-full hover:bg-slate-200 dark:hover:bg-white/10 transition-colors">
+                        <a
+                            href="https://maps.app.goo.gl/qmSaL86h6QikyAsf9"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="ml-auto bg-slate-100 dark:bg-white/5 p-3 rounded-full hover:bg-slate-200 dark:hover:bg-white/10 transition-colors flex items-center justify-center"
+                        >
                             <span className="material-symbols-outlined text-slate-600 dark:text-white">navigation</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </section>
