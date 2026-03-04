@@ -33,6 +33,7 @@ export default async function Home() {
   const productsQuery = supabase
     .from("products")
     .select("*")
+    .not("price_standard", "is", null) // Ensures identical design symmetry across the 4 layout cards
     .limit(4);
 
   const { data: featuredProducts } = await fetchWithTimeout(productsQuery);
@@ -401,7 +402,7 @@ export default async function Home() {
                   <p className="text-slate-600 dark:text-cream/60 text-sm leading-relaxed mb-6 line-clamp-3">
                     {post.content}
                   </p>
-                  <Link href="/blog" className="inline-flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-widest hover:gap-3 transition-all">
+                  <Link href={`/blog/${post.slug || post.id}`} className="inline-flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-widest hover:gap-3 transition-all">
                     Leer más
                     <span className="material-symbols-outlined !text-sm">arrow_forward</span>
                   </Link>
@@ -441,7 +442,7 @@ export default async function Home() {
                   </div>
                   <div>
                     <h4 className="text-xl font-bold hero-text text-slate-900 dark:text-white">Horario Real</h4>
-                    <p className="text-slate-500 dark:text-cream/50">Lunes a Domingo: 7:00 AM - 11:00 PM</p>
+                    <p className="text-slate-500 dark:text-cream/50">Abierto de jueves a martes de 3:00 PM a 10:30 PM, Miércoles cerrado.</p>
                   </div>
                 </div>
               </div>
@@ -449,7 +450,7 @@ export default async function Home() {
 
             <div className="w-full md:w-1/2 h-[400px] rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-200 dark:border-white/10 relative group">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.264663187687!2d-87.46454792415124!3d20.20857508124584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4fd1905668efdd%3A0x673c683833d71217!2sCocoati%20Cafe!5e0!3m2!1sen!2smx!4v1709664585123!5m2!1sen!2smx"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5079.7816918981825!2d-87.46316722364128!3d20.21635038123735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4fd7772eabf5c7%3A0x650a5c1ab9ee03bf!2sCocoati%20Caf%C3%A9%20Tulum!5e1!3m2!1ses-419!2smx!4v1772641556815!5m2!1ses-419!2smx"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

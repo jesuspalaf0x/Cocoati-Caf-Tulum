@@ -165,7 +165,7 @@ export default function ContactPage() {
                         <div className="absolute inset-0">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
-                                src="https://drive.google.com/uc?id=1Hik8sW2LDC6aVqAKXoKA3RAmtv6dSDWZ"
+                                src="https://lh3.googleusercontent.com/d/1Hik8sW2LDC6aVqAKXoKA3RAmtv6dSDWZ"
                                 alt="Mapa estilizado de la ubicación"
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
