@@ -307,15 +307,17 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <a href="#" className="group bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-white/10 transition-all hover:-translate-y-2 hover:border-primary/50 relative block aspect-[9/16]">
-              <div className="relative w-full h-full">
-                <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSE8s0xHXDN_xKzpUfj3slUzlQqWw6wJFvKrwSFbts2xF_WhRNsDPkV3Wlozp8N0kX73YKr-_TBsUDhiO6TuxyjZnMoUTp0rdOCnGUSDeyovmj1bjwE3Ww1zlHrBKk0fRav9sh_TfHB1XYEcDWOWRikU_UI-gFi5oq5NP2-f2eFZC2vdpIKUqfOmeY0ah6k6-HsB47Cw2pUyOL2F2mjdxZwAGhVCXgnRTF1dq9ZJLFBS3TrLHYpkFb82StBdEFXkgdcBl14iYr0bw"
-                  alt="TikTok 1"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+              <div className="relative w-full h-full overflow-hidden rounded-3xl">
+                <video
+                  src="https://yrxnpmaqyceoysawpdtf.supabase.co/storage/v1/object/public/Videos-sitio-web/Video_1.MP4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                <div className="absolute bottom-6 left-6 text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute bottom-6 left-6 text-white z-20">
                   <p className="font-bold mb-1">@cocoati.tulum</p>
                   <p className="text-xs opacity-80">El arte del Latte Imperator ☕️✨</p>
                 </div>
@@ -324,15 +326,17 @@ export default async function Home() {
 
             {/* Card 2 */}
             <a href="#" className="group bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-white/10 transition-all hover:-translate-y-2 hover:border-primary/50 relative block aspect-[9/16]">
-              <div className="relative w-full h-full">
-                <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlp-VuCCDgUeTGimWJOQXaRONWeUdkw5PTA0jh5zOmxvcennpqTFf0PZjhQAO-ymYmOCbkpxaan8SoJlBjWIY0UGOOjiavocFDi-gBP0jJQ5ydRDAOn_PDbw7ldpP0NSb5MDaxFgVsMq52Tz2SOAymez-mZc7PFW3ZmV2nPrjdDQfIl7v5u8t9Wb9aeVB_XvNdmqazptUrpke6ua5PAVb9g3wgCf2GZ_Jl4kAUqH9vwi_LSZtVqcQ91p3Pc150BrD4FTe30HsFiRY"
-                  alt="TikTok 2"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+              <div className="relative w-full h-full overflow-hidden rounded-3xl">
+                <video
+                  src="https://yrxnpmaqyceoysawpdtf.supabase.co/storage/v1/object/public/Videos-sitio-web/Video_2.MP4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                <div className="absolute bottom-6 left-6 text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute bottom-6 left-6 text-white z-20">
                   <p className="font-bold mb-1">@cocoati.tulum</p>
                   <p className="text-xs opacity-80">Nuevos Waffles de Temporada 🧇🍓</p>
                 </div>
@@ -341,15 +345,17 @@ export default async function Home() {
 
             {/* Card 3 */}
             <a href="#" className="group bg-white dark:bg-zinc-900 rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-white/10 transition-all hover:-translate-y-2 hover:border-primary/50 relative block aspect-[9/16]">
-              <div className="relative w-full h-full">
-                <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJzth4uswhEXGLJDMh35i6Xxt5cfafUtf-2L3SInPBGhVa__64u2Mc1-YwYt7PzlC3o61PJw4LeddJ1ILNMYPYsn0bA3LKvyXTN-QYYAnJsDWOtobeUML7oiknWQsj6tLDW8jsIz0GlbBUpWifQ-2pFhDr3v8ZzDIM2CntddOzMDlPay_58pqQFFYReJLbjpXSDMDTCfmXsClr_x8gDYGf1kw2TiUM69x88y2f5hHtq6I_HaqYIUE5v5lFLVAkpFmVEe-sP2k4aCM"
-                  alt="TikTok 3"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+              <div className="relative w-full h-full overflow-hidden rounded-3xl">
+                <video
+                  src="https://yrxnpmaqyceoysawpdtf.supabase.co/storage/v1/object/public/Videos-sitio-web/Video_3.MP4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                <div className="absolute bottom-6 left-6 text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute bottom-6 left-6 text-white z-20">
                   <p className="font-bold mb-1">@cocoati.tulum</p>
                   <p className="text-xs opacity-80">Smoothies para el calor de Tulum ☀️🥭</p>
                 </div>
