@@ -9,6 +9,9 @@ interface Author {
     role: string
     bio: string
     avatar_url: string
+    facebook_url?: string
+    instagram_url?: string
+    x_url?: string
 }
 
 export default function AuthorsPage() {
@@ -62,7 +65,15 @@ export default function AuthorsPage() {
             // Update
             const { error } = await supabase
                 .from('authors')
-                .update({ name, role, bio, avatar_url })
+                .update({
+                    name,
+                    role,
+                    bio,
+                    avatar_url,
+                    facebook_url: currentAuthor.facebook_url,
+                    instagram_url: currentAuthor.instagram_url,
+                    x_url: currentAuthor.x_url
+                })
                 .eq('id', currentAuthor.id)
 
             if (error) alert('Error al actualizar: ' + error.message)
@@ -70,7 +81,15 @@ export default function AuthorsPage() {
             // Create
             const { error } = await supabase
                 .from('authors')
-                .insert({ name, role, bio, avatar_url })
+                .insert({
+                    name,
+                    role,
+                    bio,
+                    avatar_url,
+                    facebook_url: currentAuthor.facebook_url,
+                    instagram_url: currentAuthor.instagram_url,
+                    x_url: currentAuthor.x_url
+                })
 
             if (error) alert('Error al crear: ' + error.message)
         }
@@ -124,7 +143,26 @@ export default function AuthorsPage() {
                                     <p className="text-xs text-gold-500 uppercase tracking-wider">{author.role || 'Colaborador'}</p>
                                 </div>
                             </div>
-                            <p className="text-sm text-slate-400 line-clamp-3">{author.bio || 'Sin biografía'}</p>
+                            <p className="text-sm text-slate-400 line-clamp-3 mb-4">{author.bio || 'Sin biografía'}</p>
+
+                            {/* Social Links */}
+                            <div className="flex gap-2">
+                                {author.facebook_url && (
+                                    <a href={author.facebook_url} target="_blank" rel="noreferrer" className="size-8 rounded bg-[#1F222B] flex items-center justify-center text-slate-400 hover:text-gold-500 transition-colors">
+                                        <span className="text-xs font-bold font-serif">Fb</span>
+                                    </a>
+                                )}
+                                {author.instagram_url && (
+                                    <a href={author.instagram_url} target="_blank" rel="noreferrer" className="size-8 rounded bg-[#1F222B] flex items-center justify-center text-slate-400 hover:text-gold-500 transition-colors">
+                                        <span className="text-xs font-bold font-serif">Ig</span>
+                                    </a>
+                                )}
+                                {author.x_url && (
+                                    <a href={author.x_url} target="_blank" rel="noreferrer" className="size-8 rounded bg-[#1F222B] flex items-center justify-center text-slate-400 hover:text-gold-500 transition-colors">
+                                        <span className="text-xs font-bold">X</span>
+                                    </a>
+                                )}
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -172,6 +210,38 @@ export default function AuthorsPage() {
                                     onChange={e => setCurrentAuthor({ ...currentAuthor, bio: e.target.value })}
                                     className="w-full bg-black/20 border border-slate-700 rounded-lg px-3 py-2 text-white focus:border-gold-500 outline-none h-24 resize-none"
                                 />
+                            </div>
+                            <div className="grid grid-cols-3 gap-3">
+                                <div>
+                                    <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1">Facebook URL</label>
+                                    <input
+                                        type="text"
+                                        value={currentAuthor.facebook_url || ''}
+                                        onChange={e => setCurrentAuthor({ ...currentAuthor, facebook_url: e.target.value })}
+                                        className="w-full bg-black/20 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:border-gold-500 outline-none"
+                                        placeholder="https://fb.com/..."
+                                    />
+                                </div>
+                                <div>
+                                    <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1">Instagram URL</label>
+                                    <input
+                                        type="text"
+                                        value={currentAuthor.instagram_url || ''}
+                                        onChange={e => setCurrentAuthor({ ...currentAuthor, instagram_url: e.target.value })}
+                                        className="w-full bg-black/20 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:border-gold-500 outline-none"
+                                        placeholder="https://ig.com/..."
+                                    />
+                                </div>
+                                <div>
+                                    <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1">X URL</label>
+                                    <input
+                                        type="text"
+                                        value={currentAuthor.x_url || ''}
+                                        onChange={e => setCurrentAuthor({ ...currentAuthor, x_url: e.target.value })}
+                                        className="w-full bg-black/20 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:border-gold-500 outline-none"
+                                        placeholder="https://x.com/..."
+                                    />
+                                </div>
                             </div>
                             <div className="flex gap-3 pt-4">
                                 <button

@@ -1,0 +1,554 @@
+
+> dashboard@0.1.0 lint
+> eslint
+
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/(public)/blog/page.tsx
+   12:40  error    Unexpected any. Specify a different type                                                                      @typescript-eslint/no-explicit-any
+   13:54  error    Unexpected any. Specify a different type                                                                      @typescript-eslint/no-explicit-any
+   22:8   warning  React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  189:51  error    Unexpected any. Specify a different type                                                                      @typescript-eslint/no-explicit-any
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/(public)/blog/post/page.tsx
+   16:38  error    Unexpected any. Specify a different type                                                                     @typescript-eslint/no-explicit-any
+   17:54  error    Unexpected any. Specify a different type                                                                     @typescript-eslint/no-explicit-any
+   59:27  error    Unexpected any. Specify a different type                                                                     @typescript-eslint/no-explicit-any
+   73:8   warning  React Hook useEffect has a missing dependency: 'supabase'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  199:57  error    Unexpected any. Specify a different type                                                                     @typescript-eslint/no-explicit-any
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/(public)/club-emperadores/page.tsx
+  78:118  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  78:171  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/(public)/contacto/page.tsx
+  3:8  warning  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/(public)/eventos/page.tsx
+    3:8    warning  'Link' is defined but never used                                 @typescript-eslint/no-unused-vars
+   50:25   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   50:112  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  141:88   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  141:110  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/(public)/historia/page.tsx
+    2:8    warning  'Link' is defined but never used                                 @typescript-eslint/no-unused-vars
+   46:33   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   46:138  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  210:41   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  210:179  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  227:41   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  227:133  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/(public)/menu/page.tsx
+   13:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   33:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   33:73  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  137:67  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/(public)/page.tsx
+   15:44   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  114:15   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  114:123  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  119:65   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  304:15   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  304:128  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  378:15   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  378:144  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  383:52   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/(public)/preguntas-frecuentes/page.tsx
+  3:8  warning  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/blog/new/page.tsx
+   43:8   warning  React Hook useEffect has missing dependencies: 'author', 'category', and 'supabase'. Either include them or remove the dependency array                                                                                                                                                  react-hooks/exhaustive-deps
+   62:41  warning  'data' is assigned a value but never used                                                                                                                                                                                                                                                @typescript-eslint/no-unused-vars
+  121:33  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/blog/page.tsx
+  39:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/crm/levels/page.tsx
+  37:9  error    Error: Cannot access variable before it is declared
+
+`fetchLevels` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/crm/levels/page.tsx:37:9
+  35 |
+  36 |     useEffect(() => {
+> 37 |         fetchLevels()
+     |         ^^^^^^^^^^^ `fetchLevels` accessed before it is declared
+  38 |     }, [])
+  39 |
+  40 |     const fetchLevels = async () => {
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/crm/levels/page.tsx:40:5
+  38 |     }, [])
+  39 |
+> 40 |     const fetchLevels = async () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 41 |         setLoading(true)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 42 |         const { data, error } = await supabase
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 49 |         setLoading(false)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 50 |     }
+     | ^^^^^^ `fetchLevels` is declared here
+  51 |
+  52 |     const handleEdit = (level: CRMLevel) => {
+  53 |         setCurrentLevel(level)  react-hooks/immutability
+  38:8  warning  React Hook useEffect has a missing dependency: 'fetchLevels'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              react-hooks/exhaustive-deps
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/crm/page.tsx
+  45:9   error    Error: Cannot access variable before it is declared
+
+`fetchData` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/crm/page.tsx:45:9
+  43 |
+  44 |     useEffect(() => {
+> 45 |         fetchData()
+     |         ^^^^^^^^^ `fetchData` accessed before it is declared
+  46 |     }, [])
+  47 |
+  48 |     const fetchData = async () => {
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/crm/page.tsx:48:5
+  46 |     }, [])
+  47 |
+> 48 |     const fetchData = async () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 49 |         setLoading(true)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 50 |
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 63 |         setLoading(false)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 64 |     }
+     | ^^^^^^ `fetchData` is declared here
+  65 |
+  66 |     const filteredProfiles = profiles.filter(profile => {
+  67 |         const fullName = `${profile.first_name || ''} ${profile.last_name || ''}`.toLowerCase()  react-hooks/immutability
+  46:8   warning  React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                react-hooks/exhaustive-deps
+  79:17  warning  'data' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/categories/page.tsx
+  22:9  error    Error: Cannot access variable before it is declared
+
+`fetchCategories` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/categories/page.tsx:22:9
+  20 |
+  21 |     useEffect(() => {
+> 22 |         fetchCategories()
+     |         ^^^^^^^^^^^^^^^ `fetchCategories` accessed before it is declared
+  23 |     }, [])
+  24 |
+  25 |     const fetchCategories = async () => {
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/categories/page.tsx:25:5
+  23 |     }, [])
+  24 |
+> 25 |     const fetchCategories = async () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 26 |         setLoading(true)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 27 |         const { data, error } = await supabase
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |         setLoading(false)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 35 |     }
+     | ^^^^^^ `fetchCategories` is declared here
+  36 |
+  37 |     const handleEdit = (category: MenuCategory) => {
+  38 |         setCurrentCategory(category)  react-hooks/immutability
+  23:8  warning  React Hook useEffect has a missing dependency: 'fetchCategories'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 react-hooks/exhaustive-deps
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/modifiers/page.tsx
+  22:9  error    Error: Cannot access variable before it is declared
+
+`fetchModifiers` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/modifiers/page.tsx:22:9
+  20 |
+  21 |     useEffect(() => {
+> 22 |         fetchModifiers()
+     |         ^^^^^^^^^^^^^^ `fetchModifiers` accessed before it is declared
+  23 |     }, [])
+  24 |
+  25 |     const fetchModifiers = async () => {
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/modifiers/page.tsx:25:5
+  23 |     }, [])
+  24 |
+> 25 |     const fetchModifiers = async () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 26 |         setLoading(true)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 27 |         const { data, error } = await supabase
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 34 |         setLoading(false)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 35 |     }
+     | ^^^^^^ `fetchModifiers` is declared here
+  36 |
+  37 |     const handleEdit = (modifier: MenuModifier) => {
+  38 |         setCurrentModifier(modifier)  react-hooks/immutability
+  23:8  warning  React Hook useEffect has a missing dependency: 'fetchModifiers'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        react-hooks/exhaustive-deps
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/page.tsx
+   58:9    error    Error: Cannot access variable before it is declared
+
+`fetchProducts` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/page.tsx:58:9
+  56 |
+  57 |     useEffect(() => {
+> 58 |         fetchProducts()
+     |         ^^^^^^^^^^^^^ `fetchProducts` accessed before it is declared
+  59 |         fetchCategories()
+  60 |         fetchTags()
+  61 |         fetchDbModifiers()
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/page.tsx:86:5
+   84 |     }
+   85 |
+>  86 |     const fetchProducts = async () => {
+      |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  87 |         setLoading(true)
+      | ^^^^^^^^^^^^^^^^^^^^^^^^
+>  88 |         const { data, error } = await supabase
+      …
+      | ^^^^^^^^^^^^^^^^^^^^^^^^
+>  96 |         setLoading(false)
+      | ^^^^^^^^^^^^^^^^^^^^^^^^
+>  97 |     }
+      | ^^^^^^ `fetchProducts` is declared here
+   98 |
+   99 |     const handleAddModifier = () => {
+  100 |         if (newModName && newModPrice) {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   react-hooks/immutability
+   59:9    error    Error: Cannot access variable before it is declared
+
+`fetchCategories` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/page.tsx:59:9
+  57 |     useEffect(() => {
+  58 |         fetchProducts()
+> 59 |         fetchCategories()
+     |         ^^^^^^^^^^^^^^^ `fetchCategories` accessed before it is declared
+  60 |         fetchTags()
+  61 |         fetchDbModifiers()
+  62 |     }, [])
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/page.tsx:64:5
+  62 |     }, [])
+  63 |
+> 64 |     const fetchCategories = async () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 65 |         const { data, error } = await supabase.from('menu_categories').select('name, slug').order('order_index', { ascending: true })
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 66 |         if (!error && data) {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 67 |             setDbCategories(data)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 68 |             if (data.length > 0) setCategory(data[0].name) // Set default initially
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 69 |         }
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 70 |     }
+     | ^^^^^^ `fetchCategories` is declared here
+  71 |
+  72 |     const fetchTags = async () => {
+  73 |         const { data, error } = await supabase.from('menu_tags').select('name, slug')  react-hooks/immutability
+   60:9    error    Error: Cannot access variable before it is declared
+
+`fetchTags` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/page.tsx:60:9
+  58 |         fetchProducts()
+  59 |         fetchCategories()
+> 60 |         fetchTags()
+     |         ^^^^^^^^^ `fetchTags` accessed before it is declared
+  61 |         fetchDbModifiers()
+  62 |     }, [])
+  63 |
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/page.tsx:72:5
+  70 |     }
+  71 |
+> 72 |     const fetchTags = async () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 73 |         const { data, error } = await supabase.from('menu_tags').select('name, slug')
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 74 |         if (!error && data) {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 75 |             setDbTags(data)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 76 |         }
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 77 |     }
+     | ^^^^^^ `fetchTags` is declared here
+  78 |
+  79 |     const fetchDbModifiers = async () => {
+  80 |         const { data, error } = await supabase.from('menu_modifiers').select('name, price').eq('is_active', true)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            react-hooks/immutability
+   61:9    error    Error: Cannot access variable before it is declared
+
+`fetchDbModifiers` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/page.tsx:61:9
+  59 |         fetchCategories()
+  60 |         fetchTags()
+> 61 |         fetchDbModifiers()
+     |         ^^^^^^^^^^^^^^^^ `fetchDbModifiers` accessed before it is declared
+  62 |     }, [])
+  63 |
+  64 |     const fetchCategories = async () => {
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/page.tsx:79:5
+  77 |     }
+  78 |
+> 79 |     const fetchDbModifiers = async () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 80 |         const { data, error } = await supabase.from('menu_modifiers').select('name, price').eq('is_active', true)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 81 |         if (!error && data) {
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 82 |             setDbModifiers(data)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 83 |         }
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 84 |     }
+     | ^^^^^^ `fetchDbModifiers` is declared here
+  85 |
+  86 |     const fetchProducts = async () => {
+  87 |         setLoading(true)                                                                                                                                                                                                                                                                                                                                                                                                           react-hooks/immutability
+   62:8    warning  React Hook useEffect has missing dependencies: 'fetchCategories', 'fetchDbModifiers', 'fetchProducts', and 'fetchTags'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          react-hooks/exhaustive-deps
+  163:41   warning  'data' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           @typescript-eslint/no-unused-vars
+  180:28   error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            @typescript-eslint/no-explicit-any
+  286:53   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             @next/next/no-img-element
+  424:91   error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            @typescript-eslint/no-explicit-any
+  445:57   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             @next/next/no-img-element
+  506:90   error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            @typescript-eslint/no-explicit-any
+  510:89   error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            @typescript-eslint/no-explicit-any
+  510:122  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            @typescript-eslint/no-explicit-any
+  510:165  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            @typescript-eslint/no-explicit-any
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/tags/page.tsx
+   33:9    error    Error: Cannot access variable before it is declared
+
+`fetchTags` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/tags/page.tsx:33:9
+  31 |
+  32 |     useEffect(() => {
+> 33 |         fetchTags()
+     |         ^^^^^^^^^ `fetchTags` accessed before it is declared
+  34 |     }, [])
+  35 |
+  36 |     const fetchTags = async () => {
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/menu/tags/page.tsx:36:5
+  34 |     }, [])
+  35 |
+> 36 |     const fetchTags = async () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 37 |         setLoading(true)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 38 |         const { data, error } = await supabase
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 45 |         setLoading(false)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 46 |     }
+     | ^^^^^^ `fetchTags` is declared here
+  47 |
+  48 |     const handleEdit = (tag: MenuTag) => {
+  49 |         setCurrentTag(tag)  react-hooks/immutability
+   34:8    warning  React Hook useEffect has a missing dependency: 'fetchTags'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       react-hooks/exhaustive-deps
+  115:83   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react/no-unescaped-entities
+  115:89   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react/no-unescaped-entities
+  115:92   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react/no-unescaped-entities
+  115:104  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react/no-unescaped-entities
+  115:107  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react/no-unescaped-entities
+  115:114  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react/no-unescaped-entities
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/settings/blog/authors/page.tsx
+   25:9   error    Error: Cannot access variable before it is declared
+
+`fetchAuthors` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/settings/blog/authors/page.tsx:25:9
+  23 |
+  24 |     useEffect(() => {
+> 25 |         fetchAuthors()
+     |         ^^^^^^^^^^^^ `fetchAuthors` accessed before it is declared
+  26 |     }, [])
+  27 |
+  28 |     const fetchAuthors = async () => {
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/settings/blog/authors/page.tsx:28:5
+  26 |     }, [])
+  27 |
+> 28 |     const fetchAuthors = async () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 29 |         setLoading(true)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 30 |         const { data, error } = await supabase
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 37 |         setLoading(false)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 38 |     }
+     | ^^^^^^ `fetchAuthors` is declared here
+  39 |
+  40 |     const handleEdit = (author: Author) => {
+  41 |         setCurrentAuthor(author)  react-hooks/immutability
+   26:8   warning  React Hook useEffect has a missing dependency: 'fetchAuthors'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            react-hooks/exhaustive-deps
+  134:41  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @next/next/no-img-element
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/settings/blog/categories/page.tsx
+  33:9  error    Error: Cannot access variable before it is declared
+
+`fetchCategories` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/settings/blog/categories/page.tsx:33:9
+  31 |
+  32 |     useEffect(() => {
+> 33 |         fetchCategories()
+     |         ^^^^^^^^^^^^^^^ `fetchCategories` accessed before it is declared
+  34 |     }, [])
+  35 |
+  36 |     const fetchCategories = async () => {
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/settings/blog/categories/page.tsx:36:5
+  34 |     }, [])
+  35 |
+> 36 |     const fetchCategories = async () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 37 |         setLoading(true)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 38 |         const { data, error } = await supabase
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 45 |         setLoading(false)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 46 |     }
+     | ^^^^^^ `fetchCategories` is declared here
+  47 |
+  48 |     const handleEdit = (category: Category) => {
+  49 |         setCurrentCategory(category)  react-hooks/immutability
+  34:8  warning  React Hook useEffect has a missing dependency: 'fetchCategories'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               react-hooks/exhaustive-deps
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/settings/page.tsx
+  11:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/settings/page.tsx:11:13
+   9 |         // Check current theme
+  10 |         if (document.documentElement.classList.contains('dark')) {
+> 11 |             setTheme('dark')
+     |             ^^^^^^^^ Avoid calling setState() directly within an effect
+  12 |         } else {
+  13 |             setTheme('light')
+  14 |         }  react-hooks/set-state-in-effect
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/settings/users/page.tsx
+  21:9  error    Error: Cannot access variable before it is declared
+
+`fetchUsers` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/settings/users/page.tsx:21:9
+  19 |
+  20 |     useEffect(() => {
+> 21 |         fetchUsers()
+     |         ^^^^^^^^^^ `fetchUsers` accessed before it is declared
+  22 |     }, [])
+  23 |
+  24 |     const fetchUsers = async () => {
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/admin/settings/users/page.tsx:24:5
+  22 |     }, [])
+  23 |
+> 24 |     const fetchUsers = async () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 25 |         setLoading(true)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 26 |         const { data, error } = await supabase
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 36 |         setLoading(false)
+     | ^^^^^^^^^^^^^^^^^^^^^^^^
+> 37 |     }
+     | ^^^^^^ `fetchUsers` is declared here
+  38 |
+  39 |     const handleRoleChange = async (userId: string, newRole: string) => {
+  40 |         const { error } = await supabase  react-hooks/immutability
+  22:8  warning  React Hook useEffect has a missing dependency: 'fetchUsers'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     react-hooks/exhaustive-deps
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/app/layout.tsx
+  30:9  warning  A font-display parameter is missing (adding `&display=optional` is recommended). See: https://nextjs.org/docs/messages/google-font-display                       @next/next/google-font-display
+  30:9  warning  Custom fonts not added in `pages/_document.js` will only load for a single page. This is discouraged. See: https://nextjs.org/docs/messages/no-page-custom-font  @next/next/no-page-custom-font
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/components/Footer.tsx
+  19:29   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  19:107  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/components/Header.tsx
+  14:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/components/Header.tsx:14:9
+  12 |         const theme = localStorage.getItem('theme')
+  13 |         const isDarkMode = theme === 'dark' || (!theme && document.documentElement.classList.contains('dark'))
+> 14 |         setIsDark(isDarkMode)
+     |         ^^^^^^^^^ Avoid calling setState() directly within an effect
+  15 |         if (isDarkMode) {
+  16 |             document.documentElement.classList.add('dark')
+  17 |         } else {  react-hooks/set-state-in-effect
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/components/ProductCard.tsx
+  24:11  warning  'isFrappe' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/components/RichTextEditor.tsx
+  10:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/components/ThemeToggle.tsx
+  15:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/components/ThemeToggle.tsx:15:13
+  13 |                 window.matchMedia("(prefers-color-scheme: dark)").matches)
+  14 |         ) {
+> 15 |             setDarkMode(true);
+     |             ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  16 |             document.documentElement.classList.add("dark");
+  17 |         } else {
+  18 |             setDarkMode(false);  react-hooks/set-state-in-effect
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/utils/supabase/middleware.ts
+  18:58  warning  'options' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/jesusa.palafox/Library/Mobile Documents/com~apple~CloudDocs/Sitio web de COCOATI CAFE/dashboard/utils/supabase/server.ts
+  8:14  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 91 problems (62 errors, 29 warnings)
+

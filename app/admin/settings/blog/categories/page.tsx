@@ -8,7 +8,19 @@ interface Category {
     name: string
     slug: string
     description: string
+    color: string
 }
+
+const PRESET_COLORS = [
+    '#FFD700', // Imperial Gold
+    '#94a3b8', // Slate 400
+    '#a855f7', // Purple 500
+    '#ef4444', // Red 500
+    '#10b981', // Emerald 500
+    '#3b82f6', // Blue 500
+    '#f59e0b', // Amber 500
+    '#ec4899', // Pink 500
+]
 
 export default function CategoriesPage() {
     const supabase = createClient()
@@ -61,7 +73,7 @@ export default function CategoriesPage() {
             // Update
             const { error } = await supabase
                 .from('categories')
-                .update({ name, slug, description })
+                .update({ name, slug, description, color: currentCategory.color || '#FFD700' })
                 .eq('id', currentCategory.id)
 
             if (error) alert('Error al actualizar: ' + error.message)
@@ -69,7 +81,7 @@ export default function CategoriesPage() {
             // Create
             const { error } = await supabase
                 .from('categories')
-                .insert({ name, slug, description })
+                .insert({ name, slug, description, color: currentCategory.color || '#FFD700' })
 
             if (error) alert('Error al crear: ' + error.message)
         }
@@ -121,7 +133,15 @@ export default function CategoriesPage() {
                         <tbody className="divide-y divide-slate-800">
                             {categories.map((cat) => (
                                 <tr key={cat.id} className="hover:bg-white/5 transition-colors group">
-                                    <td className="py-4 px-4 font-bold text-white">{cat.name}</td>
+                                    <td className="py-4 px-4">
+                                        <div className="flex items-center gap-3">
+                                            <div
+                                                className="w-3 h-3 rounded-full shadow-sm"
+                                                style={{ backgroundColor: cat.color || '#FFD700' }}
+                                            />
+                                            <span className="font-bold text-white">{cat.name}</span>
+                                        </div>
+                                    </td>
                                     <td className="py-4 px-4 text-slate-400 font-mono text-xs">{cat.slug}</td>
                                     <td className="py-4 px-4 text-slate-400 text-sm">{cat.description}</td>
                                     <td className="py-4 px-4 text-right flex justify-end gap-2">
@@ -171,6 +191,21 @@ export default function CategoriesPage() {
                                     onChange={e => setCurrentCategory({ ...currentCategory, description: e.target.value })}
                                     className="w-full bg-black/20 border border-slate-700 rounded-lg px-3 py-2 text-white focus:border-gold-500 outline-none h-24 resize-none"
                                 />
+                            </div>
+                            <div>
+                                <label className="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-2">Color Distintivo</label>
+                                <div className="flex flex-wrap gap-3">
+                                    {PRESET_COLORS.map(color => (
+                                        <button
+                                            key={color}
+                                            type="button"
+                                            onClick={() => setCurrentCategory({ ...currentCategory, color })}
+                                            className={`size-8 rounded-full border-2 transition-all ${currentCategory.color === color || (!currentCategory.color && color === '#FFD700') ? 'border-white scale-110 shadow-glow' : 'border-transparent hover:scale-110'}`}
+                                            style={{ backgroundColor: color }}
+                                            title={color}
+                                        />
+                                    ))}
+                                </div>
                             </div>
                             <div className="flex gap-3 pt-4">
                                 <button

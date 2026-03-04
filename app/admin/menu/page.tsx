@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { createClient } from '@/utils/supabase/client'
 import ProductCard from '@/components/ProductCard'
+import Link from 'next/link'
 
 type Modifier = {
     name: string
@@ -49,11 +50,34 @@ export default function MenuPage() {
     const [newModName, setNewModName] = useState('')
     const [newModPrice, setNewModPrice] = useState('')
 
-    useEffect(() => {
-        fetchProducts()
-    }, [])
+    // Fetch categories dynamically
+    const [dbCategories, setDbCategories] = useState<{ name: string, slug: string }[]>([])
+    const [dbTags, setDbTags] = useState<{ name: string, slug: string }[]>([])
+    const [dbModifiers, setDbModifiers] = useState<Modifier[]>([])
 
-    const fetchProducts = async () => {
+    const fetchCategories = useCallback(async () => {
+        const { data, error } = await supabase.from('menu_categories').select('name, slug').order('order_index', { ascending: true })
+        if (!error && data) {
+            setDbCategories(data)
+            if (data.length > 0) setCategory(data[0].name) // Set default initially
+        }
+    }, [supabase])
+
+    const fetchTags = useCallback(async () => {
+        const { data, error } = await supabase.from('menu_tags').select('name, slug')
+        if (!error && data) {
+            setDbTags(data)
+        }
+    }, [supabase])
+
+    const fetchDbModifiers = useCallback(async () => {
+        const { data, error } = await supabase.from('menu_modifiers').select('name, price').eq('is_active', true)
+        if (!error && data) {
+            setDbModifiers(data)
+        }
+    }, [supabase])
+
+    const fetchProducts = useCallback(async () => {
         setLoading(true)
         const { data, error } = await supabase
             .from('products')
@@ -64,10 +88,38 @@ export default function MenuPage() {
             setProducts(data)
         }
         setLoading(false)
-    }
+    }, [supabase])
 
-    const handleAddModifier = () => {
+    useEffect(() => {
+        fetchProducts()
+        fetchCategories()
+        fetchTags()
+        fetchDbModifiers()
+    }, [fetchProducts, fetchCategories, fetchTags, fetchDbModifiers])
+
+    const handleAddModifier = async () => {
         if (newModName && newModPrice) {
+            // Check if we need to add it to the database globally
+            const isNew = !dbModifiers.find(m => m.name.toLowerCase() === newModName.toLowerCase());
+
+            if (isNew) {
+                // Determine if we should save it automatically or ask the user.
+                // For a seamless flow, we'll save it automatically since they added it here.
+                const { error } = await supabase.from('menu_modifiers').insert({
+                    name: newModName,
+                    price: parseFloat(newModPrice),
+                    is_active: true
+                });
+
+                if (error) {
+                    alert('Error guardando el nuevo modificador: ' + error.message);
+                    return;
+                }
+
+                // Refresh local DB Modifiers state
+                fetchDbModifiers();
+            }
+
             setModifiers([...modifiers, { name: newModName, price: parseFloat(newModPrice) }])
             setNewModName('')
             setNewModPrice('')
@@ -198,7 +250,21 @@ export default function MenuPage() {
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-6">
                 <div>
                     <h1 className="text-3xl font-bold text-white tracking-tight mb-2">Gestión de Productos</h1>
-                    <p className="text-slate-400">Administra el catálogo de productos disponibles en la aplicación.</p>
+                    <p className="text-slate-400 hidden sm:block">Administra el catálogo de productos disponibles en la aplicación.</p>
+                    <div className="flex flex-wrap items-center gap-3 text-sm mt-4">
+                        <Link href="/admin/menu/categories" className="flex items-center gap-1.5 text-slate-400 hover:text-gold-500 transition-colors bg-surface-light px-3 py-1.5 rounded-lg border border-slate-800 hover:border-gold-500/50 shadow-sm">
+                            <span className="material-symbols-outlined text-[16px]">category</span>
+                            Categorías
+                        </Link>
+                        <Link href="/admin/menu/tags" className="flex items-center gap-1.5 text-slate-400 hover:text-gold-500 transition-colors bg-surface-light px-3 py-1.5 rounded-lg border border-slate-800 hover:border-gold-500/50 shadow-sm">
+                            <span className="material-symbols-outlined text-[16px]">sell</span>
+                            Etiquetas
+                        </Link>
+                        <Link href="/admin/menu/modifiers" className="flex items-center gap-1.5 text-slate-400 hover:text-gold-500 transition-colors bg-surface-light px-3 py-1.5 rounded-lg border border-slate-800 hover:border-gold-500/50 shadow-sm">
+                            <span className="material-symbols-outlined text-[16px]">tune</span>
+                            Modificadores
+                        </Link>
+                    </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
                     <div className="relative group w-full sm:w-64">
@@ -210,10 +276,9 @@ export default function MenuPage() {
                     <div className="relative w-full sm:w-48">
                         <select className="w-full pl-4 pr-10 py-2.5 bg-surface-dark border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 appearance-none cursor-pointer">
                             <option value="">Todas las Categorías</option>
-                            <option value="Bebida">Bebidas</option>
-                            <option value="Alimento">Alimentos</option>
-                            <option value="Postre">Postres</option>
-                            <option value="Merch">Merch</option>
+                            {dbCategories.map(cat => (
+                                <option key={cat.slug} value={cat.name}>{cat.name}</option>
+                            ))}
                         </select>
                         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none">
                             <span className="material-symbols-outlined text-lg">expand_more</span>
@@ -380,10 +445,9 @@ export default function MenuPage() {
                                                         <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Categoría</label>
                                                         <div className="relative">
                                                             <select value={category} onChange={e => setCategory(e.target.value)} className="w-full px-4 py-3 bg-[#1F222B] text-white border border-slate-700 rounded-lg focus:outline-none focus:border-gold-500 appearance-none cursor-pointer">
-                                                                <option value="Bebida">Bebidas</option>
-                                                                <option value="Alimento">Alimentos</option>
-                                                                <option value="Postre">Postres</option>
-                                                                <option value="Merch">Merch</option>
+                                                                {dbCategories.map(cat => (
+                                                                    <option key={cat.slug} value={cat.name}>{cat.name}</option>
+                                                                ))}
                                                             </select>
                                                             <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">expand_more</span>
                                                         </div>
@@ -393,9 +457,9 @@ export default function MenuPage() {
                                                         <div className="relative">
                                                             <select value={label} onChange={e => setLabel(e.target.value)} className="w-full px-4 py-3 bg-[#1F222B] text-white border border-slate-700 rounded-lg focus:outline-none focus:border-gold-500 appearance-none cursor-pointer">
                                                                 <option value="none">Sin etiqueta</option>
-                                                                <option value="new">Nuevo</option>
-                                                                <option value="bestseller">Más Vendido</option>
-                                                                <option value="seasonal">De Temporada</option>
+                                                                {(dbTags || []).map((tag: any) => (
+                                                                    <option key={tag.slug} value={tag.slug}>{tag.name}</option>
+                                                                ))}
                                                             </select>
                                                             <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">label</span>
                                                         </div>
@@ -470,15 +534,46 @@ export default function MenuPage() {
                                                 <span className="material-symbols-outlined text-lg">tune</span> Modificadores (Opcional)
                                             </div>
                                             <div className="bg-[#1F222B]/30 p-6 rounded-xl border border-slate-800 space-y-4">
-                                                <p className="text-sm text-slate-400 mb-4">Añade opciones extra para personalizar este producto (ej. Leches vegetales, extra shot de café, sin cebolla, etc.)</p>
+                                                <p className="text-sm text-slate-400 mb-4">Selecciona opciones extra para personalizar este producto desde el catálogo de modificadores.</p>
 
-                                                <div className="flex gap-3">
-                                                    <input type="text" value={newModName} onChange={e => setNewModName(e.target.value)} className="flex-1 bg-[#15171E] border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-500 placeholder-slate-500" placeholder="Nombre (ej. Queso Extra)" />
-                                                    <div className="relative w-32">
-                                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gold-500 text-sm">$</span>
-                                                        <input type="number" step="0.01" value={newModPrice} onChange={e => setNewModPrice(e.target.value)} className="w-full bg-[#15171E] border border-slate-700 rounded-lg pl-7 pr-3 py-2.5 text-sm font-mono text-white focus:outline-none focus:border-gold-500 placeholder-slate-500" placeholder="0.00" />
+                                                <div className="flex gap-3 items-end">
+                                                    <div className="flex-1 space-y-2">
+                                                        <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Nombre o Selección</label>
+                                                        <input
+                                                            type="text"
+                                                            list="modifiers-list"
+                                                            value={newModName}
+                                                            onChange={e => {
+                                                                const val = e.target.value;
+                                                                setNewModName(val);
+                                                                const mod = dbModifiers.find((m: any) => m.name.toLowerCase() === val.toLowerCase());
+                                                                if (mod) setNewModPrice(mod.price.toString());
+                                                            }}
+                                                            className="w-full bg-[#15171E] border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-500 placeholder-slate-600"
+                                                            placeholder="Ej: Leche de Avena"
+                                                        />
+                                                        <datalist id="modifiers-list">
+                                                            {(dbModifiers || []).filter((m: any) => !modifiers.find((active: any) => active.name === m.name)).map((mod: any) => (
+                                                                <option key={mod.name} value={mod.name} />
+                                                            ))}
+                                                        </datalist>
                                                     </div>
-                                                    <button type="button" onClick={handleAddModifier} className="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2.5 rounded-lg transition-colors flex items-center justify-center">
+                                                    <div className="w-32 space-y-2">
+                                                        <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Precio Extra</label>
+                                                        <div className="relative">
+                                                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">$</span>
+                                                            <input
+                                                                type="number"
+                                                                step="0.01"
+                                                                min="0"
+                                                                value={newModPrice}
+                                                                onChange={e => setNewModPrice(e.target.value)}
+                                                                className="w-full bg-[#15171E] border border-slate-700 rounded-lg pl-7 pr-3 py-2.5 text-sm font-mono text-white focus:outline-none focus:border-gold-500 placeholder-slate-500"
+                                                                placeholder="0.00"
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" onClick={handleAddModifier} className="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2.5 rounded-lg transition-colors flex items-center justify-center h-[42px]">
                                                         <span className="material-symbols-outlined">add</span>
                                                     </button>
                                                 </div>
