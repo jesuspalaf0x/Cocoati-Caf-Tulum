@@ -318,8 +318,8 @@ export default async function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none"></div>
                 <div className="absolute bottom-6 left-6 text-white z-20">
-                  <p className="font-bold mb-1">@cocoati.tulum</p>
-                  <p className="text-xs opacity-80">El arte del Latte Imperator ☕️✨</p>
+                  <p className="font-bold mb-1">@cocoati.cafe</p>
+                  <p className="text-xs opacity-80">La altura de las montañas en Chiapas y Oaxaca no es solo paisaje; es el ingrediente secreto que hace que tu taza en Cocoati sea inigualable. ☕️✨</p>
                 </div>
               </div>
             </a>
@@ -337,8 +337,8 @@ export default async function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none"></div>
                 <div className="absolute bottom-6 left-6 text-white z-20">
-                  <p className="font-bold mb-1">@cocoati.tulum</p>
-                  <p className="text-xs opacity-80">Nuevos Waffles de Temporada 🧇🍓</p>
+                  <p className="font-bold mb-1">@cocoati.cafe</p>
+                  <p className="text-xs opacity-80">Nos presentamos en el carnaval Tulum 2026, ven a disfrutar del ambiente de la fiesta con los amigos, la familia, y con las personas que más quieres. Te esperamos. 🧇🍓</p>
                 </div>
               </div>
             </a>
@@ -356,8 +356,8 @@ export default async function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none"></div>
                 <div className="absolute bottom-6 left-6 text-white z-20">
-                  <p className="font-bold mb-1">@cocoati.tulum</p>
-                  <p className="text-xs opacity-80">Smoothies para el calor de Tulum ☀️🥭</p>
+                  <p className="font-bold mb-1">@cocoati.cafe</p>
+                  <p className="text-xs opacity-80">Todos los días abrimos y desde que el sol está en su punto más alto, Cocoati Cafe abre sus puertas para invitarlos a disfrutar de ricos postres y bebidas unicas. ☀️🥭</p>
                 </div>
               </div>
             </a>
