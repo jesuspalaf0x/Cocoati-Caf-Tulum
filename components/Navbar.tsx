@@ -39,11 +39,11 @@ export default function Navbar() {
                 {/* Brand */}
                 <div className="flex items-center gap-12">
                     <Link href="/" className="flex items-center gap-3 group cursor-pointer">
-                        <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-slate-900 dark:text-white shadow-lg shadow-primary/20 transition-all group-hover:scale-105">
-                            <BrandLogo className="w-7 h-7" />
+                        <div className="w-10 h-10 flex items-center justify-center text-slate-900 dark:text-white transition-all group-hover:scale-105">
+                            <BrandLogo className="w-10 h-10" />
                         </div>
                         <h2 className="text-2xl font-bold brand-text text-slate-900 dark:text-white transition-colors duration-300">
-                            COCOATI
+                            Cocoati
                         </h2>
                     </Link>
 

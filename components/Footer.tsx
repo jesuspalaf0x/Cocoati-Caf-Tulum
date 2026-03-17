@@ -9,11 +9,11 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="space-y-6">
                         <div className="flex items-center gap-3 group">
-                            <div className="size-10 bg-primary rounded-lg flex items-center justify-center text-slate-900 dark:text-white transition-colors duration-300">
-                                <BrandLogo className="w-7 h-7" />
+                            <div className="size-10 flex items-center justify-center text-slate-900 dark:text-white transition-colors duration-300">
+                                <BrandLogo className="size-10" />
                             </div>
                             <h2 className="text-2xl font-bold brand-text text-slate-900 dark:text-white transition-colors duration-300">
-                                COCOATI
+                                Cocoati
                             </h2>
                         </div>
                         <p className="text-slate-500 dark:text-cream/50 text-sm leading-relaxed italic">
@@ -240,7 +240,7 @@ export default function Footer() {
 
                 <div className="pt-10 border-t border-slate-200 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
                     <p className="text-slate-400 dark:text-cream/30 text-xs">
-                        © 2024 COCOATI. Todos los derechos reservados.
+                        © 2024 Cocoati. Todos los derechos reservados.
                     </p>
                     <div className="flex gap-8">
                         <a

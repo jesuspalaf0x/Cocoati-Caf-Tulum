@@ -28,11 +28,11 @@ export default function Sidebar() {
         <aside className="w-72 flex-shrink-0 border-r border-slate-800 bg-surface-dark hidden md:flex flex-col">
             <div className="p-6">
                 <div className="flex items-center gap-4 mb-10">
-                    <div className="h-12 w-12 rounded-xl bg-[image:var(--background-image-gold-gradient)] flex items-center justify-center text-white shadow-lg shadow-primary/20">
-                        <BrandLogo className="w-8 h-8" />
+                    <div className="h-12 w-12 flex items-center justify-center text-white transition-all group-hover:scale-105">
+                        <BrandLogo className="w-12 h-12" />
                     </div>
                     <div>
-                        <h3 className="text-base font-bold text-white brand-text">COCOATI</h3>
+                        <h3 className="text-base font-bold text-white brand-text">Cocoati</h3>
                         <p className="text-xs text-primary font-medium tracking-wider uppercase">Panel Admin</p>
                     </div>
                 </div>
@@ -97,7 +97,7 @@ export default function Sidebar() {
                     <button
                         onClick={handleLogout}
                         className="text-slate-500 hover:text-red-400 transition-colors"
-                        title="Cerrar Sessión"
+                        title="Cerrar Sesión"
                     >
                         <span className="material-symbols-outlined text-[20px]">logout</span>
                     </button>

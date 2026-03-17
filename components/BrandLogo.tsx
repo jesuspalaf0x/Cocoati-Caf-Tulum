@@ -10,7 +10,7 @@ export default function BrandLogo({ className = "w-10 h-10" }: BrandLogoProps) {
     return (
         <svg
             className={className}
-            viewBox="0 0 1498 1344"
+            viewBox="48 120 1403 1259"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
         >
