@@ -11,15 +11,19 @@ export default function ClubPage() {
         <div className="bg-background-light dark:bg-background-dark text-slate-800 dark:text-cream transition-colors duration-300">
 
             {/* Hero Section: Tu Ascenso al Trono */}
-            <section className="relative py-24 bg-background-dark overflow-hidden">
+            <section className="relative py-32 bg-background-dark overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-gradient-to-b from-background-dark via-background-dark/95 to-background-dark z-10"></div>
-                    {/* Texture Overlay */}
+                    {/* Dark Professional Overlay */}
+                    <div className="absolute inset-0 bg-black/60 z-10"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-background-dark/0 via-background-dark/50 to-background-dark z-20"></div>
+
+                    {/* High Quality Luxury Background */}
                     <Image
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPsfS1hZublMIZALyVARbqPklknuyVARaQGZrfhTmxSIN2KuxC6qPlPYzBciDptIWcbYhvJMrojKDnnzgAm8TJW-jUInhaQRdI3v4Ru7bTAaEN6TgyzihOKaA9nB1l_TsLkjWQHvSHic7FKg0ZvAse3p5dxu71jt_Nzw5b-84hZPREmiOkjgWKXxvrJv5g6Z-DYS4Dh1wT4F1JcITGCgocYIy_uGWcrbKD_TIEuUD_-CY6UfBnq9Fg3BeLC-yj7NQjW4mwgPQ5RcM"
-                        alt="Coffee Texture"
+                        src="https://images.unsplash.com/photo-1614850523296-e811dc7eece6?q=80&w=2560&auto=format&fit=crop"
+                        alt="Luxury Imperial Background"
                         fill
-                        className="object-cover opacity-20 hidden dark:block"
+                        className="object-cover object-center transition-opacity duration-1000"
+                        priority
                     />
                 </div>
 
