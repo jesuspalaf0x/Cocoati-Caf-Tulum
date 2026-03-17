@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { createClient } from '@/utils/supabase/client'
 import { useRouter } from 'next/navigation'
+import BrandLogo from './BrandLogo'
 
 const menuItems = [
     { name: 'Dashboard', icon: 'grid_view', href: '/admin' },
@@ -27,11 +28,11 @@ export default function Sidebar() {
         <aside className="w-72 flex-shrink-0 border-r border-slate-800 bg-surface-dark hidden md:flex flex-col">
             <div className="p-6">
                 <div className="flex items-center gap-4 mb-10">
-                    <div className="h-12 w-12 rounded-xl bg-[image:var(--background-image-gold-gradient)] flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-primary/20">
-                        C
+                    <div className="h-12 w-12 rounded-xl bg-[image:var(--background-image-gold-gradient)] flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                        <BrandLogo className="w-8 h-8" />
                     </div>
                     <div>
-                        <h3 className="text-base font-bold text-white tracking-wide">COCOATI</h3>
+                        <h3 className="text-base font-bold text-white brand-text">COCOATI</h3>
                         <p className="text-xs text-primary font-medium tracking-wider uppercase">Panel Admin</p>
                     </div>
                 </div>

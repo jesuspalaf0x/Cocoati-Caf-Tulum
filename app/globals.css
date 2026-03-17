@@ -56,6 +56,12 @@
     font-family: var(--font-playfair-display), serif;
   }
 
+  .brand-text {
+    font-family: var(--font-cormorant-sc), serif;
+    letter-spacing: 0.106em;
+    font-weight: 700;
+  }
+
   .glass {
       background: rgba(24, 24, 27, 0.85);
       backdrop-filter: blur(12px);

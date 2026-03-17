@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { usePathname } from "next/navigation";
+import BrandLogo from "./BrandLogo";
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -38,10 +39,10 @@ export default function Navbar() {
                 {/* Brand */}
                 <div className="flex items-center gap-12">
                     <Link href="/" className="flex items-center gap-3 group cursor-pointer">
-                        <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white shadow-lg shadow-primary/20 transition-transform group-hover:scale-105">
-                            <span className="material-symbols-outlined !text-2xl">coffee</span>
+                        <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-slate-900 dark:text-white shadow-lg shadow-primary/20 transition-all group-hover:scale-105">
+                            <BrandLogo className="w-7 h-7" />
                         </div>
-                        <h2 className="text-2xl font-bold tracking-tighter hero-text text-slate-900 dark:text-white">
+                        <h2 className="text-2xl font-bold brand-text text-slate-900 dark:text-white transition-colors duration-300">
                             COCOATI
                         </h2>
                     </Link>
@@ -51,8 +52,8 @@ export default function Navbar() {
                         <Link
                             href="/"
                             className={`text-sm font-medium tracking-wide transition-colors ${isActive("/")
-                                    ? "text-primary dark:text-primary font-bold border-b-2 border-primary"
-                                    : "text-slate-600 dark:text-cream/80 hover:text-primary dark:hover:text-primary"
+                                ? "text-primary dark:text-primary font-bold border-b-2 border-primary"
+                                : "text-slate-600 dark:text-cream/80 hover:text-primary dark:hover:text-primary"
                                 }`}
                         >
                             Inicio
@@ -60,8 +61,8 @@ export default function Navbar() {
                         <Link
                             href="/historia"
                             className={`text-sm font-medium tracking-wide transition-colors ${isActive("/historia")
-                                    ? "text-primary dark:text-primary font-bold border-b-2 border-primary"
-                                    : "text-slate-600 dark:text-cream/80 hover:text-primary dark:hover:text-primary"
+                                ? "text-primary dark:text-primary font-bold border-b-2 border-primary"
+                                : "text-slate-600 dark:text-cream/80 hover:text-primary dark:hover:text-primary"
                                 }`}
                         >
                             Historia
@@ -69,8 +70,8 @@ export default function Navbar() {
                         <Link
                             href="/club-emperadores"
                             className={`text-sm font-medium tracking-wide transition-colors ${isActive("/club-emperadores")
-                                    ? "text-primary dark:text-primary font-bold border-b-2 border-primary"
-                                    : "text-slate-600 dark:text-cream/80 hover:text-primary dark:hover:text-primary"
+                                ? "text-primary dark:text-primary font-bold border-b-2 border-primary"
+                                : "text-slate-600 dark:text-cream/80 hover:text-primary dark:hover:text-primary"
                                 }`}
                         >
                             Club de Emperadores
@@ -79,8 +80,8 @@ export default function Navbar() {
                         <Link
                             href="/menu"
                             className={`text-sm font-medium tracking-wide transition-colors ${isActive("/menu")
-                                    ? "text-primary dark:text-primary font-bold border-b-2 border-primary"
-                                    : "text-slate-600 dark:text-cream/80 hover:text-primary dark:hover:text-primary"
+                                ? "text-primary dark:text-primary font-bold border-b-2 border-primary"
+                                : "text-slate-600 dark:text-cream/80 hover:text-primary dark:hover:text-primary"
                                 }`}
                         >
                             Menú
@@ -88,8 +89,8 @@ export default function Navbar() {
                         <Link
                             href="/blog"
                             className={`text-sm font-medium tracking-wide transition-colors ${isActive("/blog")
-                                    ? "text-primary dark:text-primary font-bold border-b-2 border-primary"
-                                    : "text-slate-600 dark:text-cream/80 hover:text-primary dark:hover:text-primary"
+                                ? "text-primary dark:text-primary font-bold border-b-2 border-primary"
+                                : "text-slate-600 dark:text-cream/80 hover:text-primary dark:hover:text-primary"
                                 }`}
                         >
                             Blog
