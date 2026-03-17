@@ -19,7 +19,7 @@ export default function ClubPage() {
 
                     {/* High Quality Luxury Background */}
                     <Image
-                        src="https://images.unsplash.com/photo-1614850523296-e811dc7eece6?q=80&w=2560&auto=format&fit=crop"
+                        src="https://images.unsplash.com/photo-1533134486753-c833f0ed4866?q=80&w=2560&auto=format&fit=crop"
                         alt="Luxury Imperial Background"
                         fill
                         className="object-cover object-center transition-opacity duration-1000"
