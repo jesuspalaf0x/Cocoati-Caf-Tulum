@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import FaqItem from "@/components/FaqItem";
+import FaqTabs from "@/components/FaqTabs";
 
 export const metadata = {
     title: "Preguntas Frecuentes | COCOATI",
@@ -36,79 +36,10 @@ export default function FaqPage() {
                 </div>
             </section>
 
-            {/* FAQ Categories Navigation */}
-            <div className="sticky top-20 z-40 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-slate-200 dark:border-white/5 shadow-sm">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="flex items-center justify-start md:justify-center gap-8 overflow-x-auto no-scrollbar py-4">
-                        <button className="whitespace-nowrap px-4 py-2 text-sm font-bold border-b-2 border-primary text-primary">
-                            General
-                        </button>
-                        <button className="whitespace-nowrap px-4 py-2 text-sm font-medium text-slate-600 dark:text-cream/60 hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary/30">
-                            Club de Emperadores
-                        </button>
-                        <button className="whitespace-nowrap px-4 py-2 text-sm font-medium text-slate-600 dark:text-cream/60 hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary/30">
-                            Servicios & Eventos
-                        </button>
-                        <button className="whitespace-nowrap px-4 py-2 text-sm font-medium text-slate-600 dark:text-cream/60 hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary/30">
-                            Ubicaciones
-                        </button>
-                        <button className="whitespace-nowrap px-4 py-2 text-sm font-medium text-slate-600 dark:text-cream/60 hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary/30">
-                            Sostenibilidad
-                        </button>
-                    </div>
-                </div>
-            </div>
+            {/* FAQ Tabs Section */}
+            <FaqTabs />
 
-            {/* FAQ Content Grid */}
-            <section className="max-w-5xl mx-auto px-6 py-16">
-                <div className="grid gap-6">
-                    {/* FAQ Items */}
-                    <FaqItem
-                        question="¿Qué es el Club de Emperadores?"
-                        answer="Es nuestro programa de lealtad exclusivo diseñado para premiar a nuestros clientes más distinguidos. Como miembro, disfrutas de beneficios únicos como catas privadas dirigidas por nuestros maestros baristas, acceso anticipado a nuevas mezclas de temporada y una invitación personal a eventos de gala imperial."
-                        icon="workspace_premium"
-                    />
-
-                    <FaqItem
-                        question="¿Cómo puedo ganar sellos por mis compras?"
-                        answer="Por cada bebida artesanal o bolsa de café en grano que adquieras, recibirás un Sello Imperial en tu aplicación COCOATI. Al acumular 10 sellos, podrás canjearlos por cualquier bebida de nuestro menú de especialidad o recibir un descuento exclusivo en nuestra línea de accesorios premium."
-                        icon="verified"
-                    />
-
-                    <FaqItem
-                        question="¿Ofrecen servicios de catering para bodas?"
-                        answer="Absolutamente. Llevamos la elegancia de COCOATI a tu día especial. Nuestro servicio de catering imperial incluye barras de café móviles con acabados en mármol y oro, baristas certificados y un menú personalizado que puede incluir maridajes con repostería fina. Contáctanos con al menos 3 meses de anticipación."
-                        icon="celebration"
-                    />
-
-                    <FaqItem
-                        question="¿Dónde se encuentra la ubicación de Tulum?"
-                        answer="Nuestra sede insignia en Tulum se encuentra en el corazón de la Zona Hotelera, fusionando la selva maya con la arquitectura imperial contemporánea."
-                        icon="location_on"
-                    >
-                        <div className="w-full h-48 rounded-lg overflow-hidden relative border border-primary/20 mt-4 group cursor-pointer">
-                            <Image
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6j_3cmgt2BcBsR3UDM_ADBqa3KEeMDisqLzQtq4OyxxtzjukKbhPMl3dmsVUsmbQJEmJYwK6DlvE7RAV4X2o7nijiCbgONKOy5mFK9DiCxpV7oqj4BYzWbZBR27speneZ2e9TSE16nFS-TmGwlYW82t10GxVl4vg3WDvT5gogksJbj8n7SqWnhnfxiL_bmdYQCMwP4zal9zM6As2zRQa8y9gCiViUdr_nCOOOPaxUHT6AGrmE50udE7ahM3bx6ARe951iureR6Z0"
-                                alt="Ubicación Tulum"
-                                fill
-                                className="object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
-                            />
-                            <div className="absolute inset-0 bg-black/20 flex items-center justify-center transition-opacity group-hover:bg-black/10">
-                                <span className="bg-white/90 backdrop-blur px-4 py-2 rounded-full text-xs font-bold text-slate-900 shadow-lg flex items-center gap-2">
-                                    <span className="material-symbols-outlined text-sm text-primary">map</span>
-                                    Ver en Google Maps
-                                </span>
-                            </div>
-                        </div>
-                    </FaqItem>
-
-                    <FaqItem
-                        question="¿Cuál es su compromiso con la sostenibilidad?"
-                        answer="Creemos en la nobleza de la tierra. Trabajamos directamente con fincas éticas bajo el modelo 'Bean-to-Cup', asegurando pagos justos que superan los estándares del mercado. Además, utilizamos empaques 100% compostables y procesos de tostado de bajas emisiones de carbono para preservar el entorno de nuestras comunidades cafetaleras."
-                        icon="eco"
-                    />
-                </div>
-
+            <section className="max-w-5xl mx-auto px-6 pb-16">
                 {/* Contact Section */}
                 <div className="mt-20 p-8 md:p-12 bg-primary/5 dark:bg-primary/10 rounded-3xl border border-primary/20 text-center">
                     <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-4 italic tracking-tight hero-text">
